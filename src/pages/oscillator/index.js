@@ -1,6 +1,7 @@
 
-import { Select, Button } from 'antd'
+import { Select, Button, Icon } from 'antd'
 import styles from './index.scss'
+import Cell from '@components/cell'
 
 const Option = Select.Option
 
@@ -102,6 +103,10 @@ class Oscillator extends React.Component {
         &emsp;
 
         <Button type='primary' onClick={this.handleClick.bind(this)}>{this.state.started ? 'Stop' : 'Play'}</Button>
+
+        <div>
+          <Cell><Icon type="fire" /> oscillator make sound for you</Cell>
+        </div>
 
       </div>
     )
