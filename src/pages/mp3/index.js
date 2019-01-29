@@ -36,6 +36,12 @@ class Mp3 extends React.Component {
     this.source.start(0, 10) // startTime, offsetTime, second as unit
   }
 
+  componentWillUnmount () {
+    if (this.source) {
+      this.source.stop()
+    }
+  }
+
   handleClick () {
     if (this.state.started) {
       this.source.stop()
