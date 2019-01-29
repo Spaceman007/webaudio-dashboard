@@ -33,6 +33,7 @@ class Container extends React.Component {
             <Menu.Item key='main'><Link to='/'>Web Audio Dashboard</Link></Menu.Item>
             <SubMenu title='BASIC'>
               <Menu.Item key='webcam'><Link to='/mp3'>Play Mp3</Link></Menu.Item>
+              <Menu.Item key='oscillator'><Link to='/oscillator'>Play Oscillator</Link></Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
