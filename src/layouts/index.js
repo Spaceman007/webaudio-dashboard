@@ -34,6 +34,7 @@ class Container extends React.Component {
             <SubMenu title='BASIC'>
               <Menu.Item key='webcam'><Link to='/mp3'>Play Mp3</Link></Menu.Item>
               <Menu.Item key='oscillator'><Link to='/oscillator'>Play Oscillator</Link></Menu.Item>
+              <Menu.Item key='microphone'><Link to='/microphone'>From Microphone</Link></Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
