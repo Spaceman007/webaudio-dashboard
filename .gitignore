@@ -1,0 +1,4 @@
+.umi
+dist
+node_modules
+*.swp
