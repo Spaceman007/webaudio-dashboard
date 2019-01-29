@@ -36,8 +36,8 @@ class Oscillator extends React.Component {
   init () {
     this.audioCtx = new AudioContext()
     this.gainNode = this.audioCtx.createGain()
-    this.gainNode.gain.value = 0.01 // as the sound is not so pleasant, we reduce the volume
     this.gainNode.connect(this.audioCtx.destination)
+    this.gainNode.gain.value = 0.3 // as the sound is not so pleasant, we reduce the volume
     this.oscillators = {}
   }
 
@@ -57,13 +57,17 @@ class Oscillator extends React.Component {
     }
 
     this.oscillators[this.state.oscType].frequency.value = this.state.frequency
-    this.oscillators[this.state.oscType].connect(this.audioCtx.destination)
+    this.oscillators[this.state.oscType].connect(this.gainNode)
   }
 
   stop () {
     if (this.oscillators && this.oscillators[this.state.oscType]) {
       this.oscillators[this.state.oscType].disconnect()
     }
+  }
+
+  componentWillUnmount () {
+    this.stop()
   }
 
   togglePlay () {
